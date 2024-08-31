@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<IN PROGRESS>
+AIM or this repo
+- Store view files to any source like DB or S3, fetch and render from there, views are not meant to be only in app/ directory
+- Multitenancy with subdomain
+- Allow user to create their own theme, using shopify liquid language
