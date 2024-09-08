@@ -10,5 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 0) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_01_062211) do
+  create_table "shops", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "domain"
+    t.integer "current_theme"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sql_templates", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "body"
+    t.string "path"
+    t.string "format"
+    t.string "locale"
+    t.string "handler"
+    t.boolean "partial"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "theme_id", null: false
+    t.index ["theme_id"], name: "index_sql_templates_on_theme_id"
+  end
+
+  create_table "themes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.bigint "shop_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shop_id"], name: "index_themes_on_shop_id"
+  end
+
+  add_foreign_key "sql_templates", "themes"
+  add_foreign_key "themes", "shops"
 end
