@@ -11,3 +11,7 @@ AIM or this repo
 - Fetches template from DB, based on current shops theme
 - Then renders it with locals, passed from controller
 ![alt text](image.png)
+
+
+https://github.com/user-attachments/assets/a443f047-eddc-4af6-abd6-3134ad1ff6b0
+
